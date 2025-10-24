@@ -17,7 +17,7 @@ function AlertBox({type,  message,  onClose,  children}: AlertBoxProps){
   };
  
   return (
-    <div className={`p-4 border-l-4 ${alertStyles[type]}`}>
+    <div className={`p-5 border-l-4 ${alertStyles[type]}`}>
       <div className="flex justify-between items-center">
         <p>{message}</p>
         {onClose && (
