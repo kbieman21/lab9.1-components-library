@@ -5,7 +5,7 @@ import Button from "./components/Button";
 import AlertBox from "./components/AlertBox";
 import UserProfileCard from "./components/UserProfileCard";
 import ProductDisplay from "./components/ProductDisplay";
-import { log } from "console";
+
 
 function App() {
   const user = {

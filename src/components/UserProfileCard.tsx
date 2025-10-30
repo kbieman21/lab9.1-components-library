@@ -24,7 +24,9 @@ function UserProfileCard({
 }: UserProfileCardProps) {
   return (
     
-    <div className="bg-white shadow-md border rounded-lg p-6 max-w-md w-full flex flex-col items-center space-y-6">
+    <div className="flex justify-center items-center bg-gray-100">
+
+      <div className="bg-white shadow-md border rounded-lg p-6 max-w-md w-full flex flex-col items-center space-y-6">
       {/* Avatar + Info Row */}
       <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-19 text-center sm:text-left">
         <div className="w-30 h-30 overflow-hidden border-2 border-gray-400">
@@ -58,6 +60,8 @@ function UserProfileCard({
         )}
       </div>
     </div>
+    </div>
+    
   );
 }
 
