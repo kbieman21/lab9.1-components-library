@@ -24,12 +24,12 @@ function UserProfileCard({
 }: UserProfileCardProps) {
   return (
     
-    <div className="bg-white shadow-md rounded-lg p-6 max-w-md w-full flex flex-col items-center space-y-6">
+    <div className="bg-white shadow-md border rounded-lg p-6 max-w-md w-full flex flex-col items-center space-y-6">
       {/* Avatar + Info Row */}
-      <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-6 text-center sm:text-left">
-        <div className="w-24 h-24 overflow-hidden border-2 border-gray-200">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-19 text-center sm:text-left">
+        <div className="w-30 h-30 overflow-hidden border-2 border-gray-400">
           <img
-            src={"./favicon.png"}
+            src={"./profilePicture.jpg"}
             alt={user.name}
             className="w-full h-full object-cover"
           />
@@ -39,7 +39,7 @@ function UserProfileCard({
           <p className="text-lg font-semibold text-gray-900">{user.name}</p>
           {showEmail && <p className="text-gray-600 text-sm">{user.email}</p>}
           {showRole && (
-            <p className="text-indigo-600 text-sm font-medium">{user.role}</p>
+            <p className="text-gray-600 text-sm font-medium">{user.role}</p>
           )}
         </div>
       </div>

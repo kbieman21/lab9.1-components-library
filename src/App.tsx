@@ -3,16 +3,35 @@ import Section from "./components/Section";
 import Button from "./components/Button";
 import AlertBox from "./components/AlertBox";
 import UserProfileCard from "./components/UserProfileCard";
+import ProductDisplay from "./components/ProductDisplay";
+import { log } from "console";
 
 
-const user = {
+
+
+function App() {
+  const user = {
   id: "1",
   name: "John Doe",
   email: "john.doe@example.com",
   role: "Software Engineer",
   avatarUrl: "https://example.com/avatar.jpg",
 };
-function App() {
+
+const product = {
+  id: "1",
+  name: "keyboard",
+  price: 10,
+  description: "gaming keyboard",
+  imageUrl: "https://images.unsplash.com/photo-1595044426077-d36d9236d54a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1740",
+  inStock: true
+}
+
+// const addToCart = (productId:string) => {
+//   console.log(`Product Id# ${productId} add to cart`);
+//   alert(`Added ${product.name} to cart`);
+  
+// }
   return (
     <main className="bg-white text-black h-screen p-5">
       <h1>Components Library</h1>
@@ -43,6 +62,7 @@ function App() {
             type="submit"
             onClick={() => console.log("Submit")}
           />
+          
           <Button
             text="Submit"
             type="reset"
@@ -51,9 +71,10 @@ function App() {
           <Button
             text="Disabled"
             type="reset"
-            disabled={true}
+            disabled={false}
             onClick={() => console.log("disabled")}
           />
+       
         </div>
       </Section>
       <Section title="Lab9-AlertBox">
@@ -91,11 +112,19 @@ function App() {
           user={user}
           showEmail={true}
           showRole={true}
-          onEdit={(id) => alert(`Editing user ${id}`)}
+          onEdit={(id) => {console.log(`Editing userid# ${user.id}`);
+           alert(`Editing user ${id}`)}}
         ></UserProfileCard>
       </Section>
         
       </Section>
+
+      <ProductDisplay product={product} 
+      showDescription={true} 
+      showStockStatus={true}  
+      onAddToCart={(productId) => {console.log(`Product with ID ${productId} added to cart.`);
+      }}>
+      </ProductDisplay>
     </main>
   );
 }
